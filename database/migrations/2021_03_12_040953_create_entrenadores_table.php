@@ -22,7 +22,8 @@ class CreateEntrenadoresTable extends Migration
             $table->date('fecha_nacimiento');
             $table->string('club_actual', 50);
             $table->date('fecha_fin_contrato')->nullable();
-            $table->text('experiencia');
+            $table->text('sitio_web');
+            //curriculum...opcional
             $table->string('agente', 50);//si o no         
             $table->string('email')->unique();
             $table->string('telefono', 15);

@@ -13,6 +13,8 @@
     
                         <div class="card-body">
                             <form method="POST" action="">
+
+                                @csrf
                                 <input type="hidden" name="_token" value="Zot92p7BPlMxQnkubsfCxraSBjzEgtM2CONY9vyZ">
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">Nombres</label>

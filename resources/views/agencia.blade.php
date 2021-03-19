@@ -3,7 +3,7 @@
 @section('title','Agencias')
     
 @section('content')
-    <h1>Agencia</h1><br>
+    <br>
 <main class="py-4">
     <div class="container">
         <div class="row justify-content-center">
@@ -13,6 +13,9 @@
 
                     <div class="card-body">
                         <form method="POST" action="">
+
+                            @csrf
+
                             <input type="hidden" name="_token" value="Zot92p7BPlMxQnkubsfCxraSBjzEgtM2CONY9vyZ">
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Nombre agencia</label>
@@ -78,6 +81,7 @@
                                 </div>
                             </div>
                         </form>
+                        <br>
                     </div>
                 </div>
             </div>

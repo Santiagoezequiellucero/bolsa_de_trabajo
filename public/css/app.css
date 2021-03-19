@@ -84,6 +84,7 @@ body {
   h6 {
     margin-top: 0;
     margin-bottom: 0.5rem;
+    
   }
   
   p {
@@ -445,7 +446,7 @@ body {
   .h6 {
     margin-bottom: 0.5rem;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: center ;
   }
   
   h1,
@@ -6372,10 +6373,12 @@ body {
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: calc(0.3rem - 1px);
     border-bottom-left-radius: calc(0.3rem - 1px);
+    background: grey;
   }
   
   .modal-footer > * {
     margin: 0.25rem;
+    background: grey;
   }
   
   .modal-scrollbar-measure {

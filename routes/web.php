@@ -17,12 +17,12 @@ Use App\Http\Controllers\ClubController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('inicio');
 
-Route::get('jugadores', JugadorController::class);
+Route::get('jugadores', JugadorController::class)->name('jugadores');
 
-Route::get('entrenadores', EntrenadorController::class);
+Route::get('entrenadores', EntrenadorController::class)->name('entrenadores');
 
-Route::get('agencias', AgencyController::class);
+Route::get('agencias', AgencyController::class)->name('agencias');
 
-Route::get('clubes', ClubController::class);
+Route::get('clubes', ClubController::class)->name('clubes');

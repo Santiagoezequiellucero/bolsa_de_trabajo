@@ -4,12 +4,17 @@
     
 @section('content')
 <br>
-<div class="container mx-auto">
-    <div class="jumbotron text-center">
-        <h1>TotalGes</h1>
-        <p>Registra tus datos</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-12" id="Fondo">
+            <div class="text-center">
+                <br>
+                <h1>TOTALGES</h1> 
+                <img src="futbol.jpg">
+            </div>
+        </div>
     </div>
-    
+    <br>
     <div class="row">
         <div class="col-sm-3">
             <a href="{{route('jugadores')}}" class="btn btn-success btn-lg">

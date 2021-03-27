@@ -12,140 +12,187 @@
                         <div class="card-header">Ingresar</div>
     
                         <div class="card-body">
-                            <form method="POST" action="">
+                            <form method="POST" action="{{route('datosJugador')}}">
 
                                 @csrf
-                                <input type="hidden" name="_token" value="Zot92p7BPlMxQnkubsfCxraSBjzEgtM2CONY9vyZ">
+                                
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Nombres</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Nombres</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="nombresJugador" value="" required="" autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="nombresJugador" value="{{old('nombresJugador')}}" autofocus="">
+                                        @error('nombresJugador')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
+                                    </div>                                   
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Apellido paterno</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control " name="apellidoPaternoJugador" value="{{old('apellidoPaternoJugador')}}" autofocus="">
+                                        @error('apellidoPaternoJugador')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Apellido paterno</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Apellido materno</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="apellidoPaternoJugador" value="" required="" autocomplete="name" autofocus="">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Apellido materno</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control " name="apellidoMaternoJugador"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="apellidoMaternoJugador" value="{{old('apellidoMaternoJugador')}}" autofocus="">
                                     </div>
                                 </div>
     
                                 <div class="form-group row">
-                                    <label for="date" class="col-md-4 col-form-label text-md-right">Fecha de nacimiento</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Fecha de nacimiento</label>
                                     <div class="col-md-6">
-                                        <input type="date" class="form-control " name="nacimientoJugador required="" autocomplete="date" autofocus="">
+                                        <input type="date" class="form-control " name="nacimientoJugador" value="{{old('nacimientoJugador')}}" autofocus="">
+                                        @error('nacimientoJugador')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
+                                    </div>
+                                </div>  
+                                
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Imagen de Perfil</label>
+                                    <div class="col-md-6">
+                                        <input type="file" class="form-control " name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Nombre y apellido apoderado</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Nombre y apellido apoderado</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="nombresApoderado"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="nombresApoderado" value="{{old('nombresApoderado')}}" placeholder="Ingresa si eres menor de edad" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="phone" class="col-md-4 col-form-label text-md-right">Telefono Apoderado</label>
+                                    <label  class="col-md-4 col-form-label text-md-right">Telefono Apoderado</label>
                                     <div class="col-md-6">
-                                        <input id="email" type="text" class="form-control " name="telefonoApoderado" autocomplete="phone" autofocus="">
+                                        <input type="text" class="form-control " name="telefonoApoderado" value="{{old('telefonoApoderado')}}" placeholder="Ingresa si eres menor de edad" autofocus="">
                                     </div>
                                 </div> 
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Club actual</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Club actual</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="clubJugador"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="clubJugador" value="{{old('clubJugador')}}" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="date" class="col-md-4 col-form-label text-md-right">Fecha fin de Contrato</label>
+                                    <label  class="col-md-4 col-form-label text-md-right">Fecha fin de Contrato</label>
                                     <div class="col-md-6">
-                                        <input type="date" class="form-control " name="finContratoJugador"  autocomplete="date" autofocus="">
+                                        <input type="date" class="form-control " name="finContratoJugador" value="{{old('finContratoJugador')}}" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Agente</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Agente</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="agenteJugador"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="agenteJugador" value="{{old('agenteJugador')}}" autofocus="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control " name="videoJugador1" value="{{old('videoJugador1')}}" autofocus="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control " name="videoJugador2" value="{{old('videoJugador2')}}" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">Video url</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="videoJugador1"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="videoJugador3" value="{{old('videoJugador3')}}" autocomplete="name" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <label  class="col-md-4 col-form-label text-md-right">Pierna habil</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="videoJugador2"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="piernaHabil" value="{{old('piernaHabil')}}" autofocus="">
+                                        @error('piernaHabil')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Altura</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="videoJugador3"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="altura" value="{{old('altura')}}" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Pierna habil</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Posición</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="piernaHabil"  autocomplete="name" autofocus="">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Altura</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control " name="altura"  autocomplete="name" autofocus="">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Posición</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control " name="posicion"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="posicion" value="{{old('posicion')}}" autofocus="">
+                                        @error('posicion')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
                                     </div>
                                 </div>
     
                                 <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">email</label>
+                                    <label  class="col-md-4 col-form-label text-md-right">email</label>
                                     <div class="col-md-6">
-                                        <input id="email" type="text" class="form-control " name="emailJugador" value="" required="" autocomplete="email" autofocus="">
+                                        <input  type="text" class="form-control " name="emailJugador" value="{{old('emailJugador')}}"  autofocus="">
+                                        @error('emailJugador')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
-                                    <label for="phone" class="col-md-4 col-form-label text-md-right">Telefono</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Telefono</label>
                                     <div class="col-md-6">
-                                        <input id="email" type="text" class="form-control " name="telefonoJugador" value="" required="" autocomplete="phone" autofocus="">
+                                        <input type="text" class="form-control " name="telefonoJugador" value="{{old('telefonoJugador')}}" autofocus="">
+                                        @error('telefonoJugador')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
                                     </div>
                                 </div>                           
     
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Contraseña</label>
                                     <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control " name="passwordJugador" required="" autocomplete="current-password">
+                                        <input type="password" class="form-control " value="{{old('passwordJugador')}}" name="passwordJugador" >
+                                        @error('passwordJugador')
+                                        <br>
+                                        <small>*{{$message}}</small>
+                                        <br>                                        
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Perfil Transfermarkt - Soccerway</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Perfil Transfermarkt - Soccerway</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="posicion"  autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="posicion" value="{{old('posicion')}}" autofocus="">
                                     </div> 
                                 </div>
 

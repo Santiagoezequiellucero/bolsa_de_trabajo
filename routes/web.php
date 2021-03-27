@@ -19,7 +19,13 @@ Use App\Http\Controllers\ClubController;
 
 Route::get('/', HomeController::class)->name('inicio');
 
-Route::get('jugadores', JugadorController::class)->name('jugadores');
+Route::get('jugadores', [JugadorController::class, 'index'])->name('jugadores');
+
+Route::post('jugadores',[JugadorController::class, 'datosJugador'])->name('datosJugador');
+
+Route::get('mostrarJugador',[JugadorController::class, 'show'])->name('mostrarJugador');
+
+Route::get('editarJugador',[JugadorController::class, 'editar'])->name('editarJugador');
 
 Route::get('entrenadores', EntrenadorController::class)->name('entrenadores');
 

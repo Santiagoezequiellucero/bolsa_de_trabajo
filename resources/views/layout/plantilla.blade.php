@@ -7,22 +7,21 @@
     <title>@yield('title')</title>
     {{-- favicon --}}
     {{-- script --}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    
     {{-- estilos --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 
 
-<body>
+<body class="">
+    
 
     {{-- header --}}
     {{-- nav --}}
-    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light navbar-white row">
-        <div class="container col-lg-1 col-md-1 col-sm-12 col-12">
-
-        </div>
+    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light"style="background-color: #e3f2fd;">        
         <div class="container col-lg-1 col-md-1 col-sm-12 col-12 d-flex justify-content-center">
             <a href="http://totalges.cl" class="navbar-brand">
                 <span class="brand-text font-weight-light"><b>Escuelas Futbol</b></span>
@@ -32,7 +31,7 @@
         <!-- Links de Navegacion Derecha -->
         <div class="container col-lg-3 col-md-3 col-sm-12 col-12 d-flex justify-content-center justify-content-start-lg">
             <ul class="navbar-nav">
-                <li class="nav-item d-sm-inline-block">
+                <li class="nav-item d-sm-inline-block ">
                     <a href="http://totalges.cl/home" class="btn btn-primary">
                         Iniciar Sesion
                     </a>
@@ -45,10 +44,10 @@
     @yield('content')
 
     {{-- footer --}}
-    <footer class="mainfooter" role="contentinfo">
+    <footer class="mainfooter" style="background-color: #59595cb6;" role="contentinfo">
         <div class="footer-middle">
-            <div class="container">
-                <div class="row">
+            <div >
+                <div class="container row">
                 <div class="col-md-3 col-sm-6">
                     <!--Primera Columna-->
                     <div class="footer-pad">
@@ -82,9 +81,7 @@
                         <ul class="social-network social-circle">
                         <li><a href="https://www.facebook.com" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://www.instagram.com" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                    <!-- <li><a href="https://www.linkedin.com" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li> -->
-                    <!--  <li><a href="https://www.twitter.com" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>  -->
-                    <!--  <li><a href="https://www.google.com" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>  -->
+                    
                         </ul>				
                     </div>
                 </div>

@@ -15,7 +15,7 @@
         </div>
     </div>
     <br>
-    <div class="row">
+    <div class="container row">
         <div class="col-sm-3">
             <a href="{{route('jugadores')}}" class="btn btn-success btn-lg">
                 Jugadores

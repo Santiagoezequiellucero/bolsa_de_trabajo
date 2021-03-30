@@ -16,11 +16,12 @@ class JugadorController extends Controller
     {
         $request->validate([
 
+            
             'nombresJugador'=> 'required',
             'apellidoPaternoJugador'=>'required',
             'nacimientoJugador'=>'required',
             'piernaHabil'=>'required',
-            'posicion'=>'required',
+            'posicion'=>'required',//select 2 para la posicion
             "emailJugador"=>'required',
             "telefonoJugador"=>'required',
             "passwordJugador"=>'required'

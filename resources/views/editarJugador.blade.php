@@ -22,7 +22,7 @@
                                     <input type="text" class="form-control " name="nombresJugador" value="{{old('nombresJugador')}}" autofocus="">
                                     @error('nombresJugador')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>                                   
@@ -34,7 +34,7 @@
                                     <input type="text" class="form-control " name="apellidoPaternoJugador" value="{{old('apellidoPaternoJugador')}}" autofocus="">
                                     @error('apellidoPaternoJugador')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>
@@ -53,7 +53,7 @@
                                     <input type="date" class="form-control " name="nacimientoJugador" value="{{old('nacimientoJugador')}}" autofocus="">
                                     @error('nacimientoJugador')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>
@@ -62,7 +62,7 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Imagen de Perfil</label>
                                 <div class="col-md-6">
-                                    <input type="img" class="form-control " name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
+                                    <input type="file" class="form-control" name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
                                 </div>
                             </div>
 
@@ -128,7 +128,7 @@
                                     <input type="text" class="form-control " name="piernaHabil" value="{{old('piernaHabil')}}" autofocus="">
                                     @error('piernaHabil')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>
@@ -144,10 +144,24 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Posición</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="posicion" value="{{old('posicion')}}" autofocus="">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <option selected></option>
+                                        <option value="portero">Portero</option>
+                                        <option value="lateral derecho">Lateral derecho</option>
+                                        <option value="lateral izquierdo">Lateral izquierdo</option>
+                                        <option value="defensa central">Defensa central</option>
+                                        <option value="pivote">Pivote</option>
+                                        <option value="mediocentro">Mediocentro</option>
+                                        <option value="mediocentro ofencivo">Mediocentro ofensivo</option>
+                                        <option value="extremo izquierdo">Extremo izquierdo</option>
+                                        <option value="extremo derecho">Extremo derecho</option>
+                                        <option value="delantero centro">Delantero centro</option>
+                                        {{-- <option value="3">Three</option>
+                                        <option value="3">Three</option> --}}                                            
+                                    </select>
                                     @error('posicion')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>
@@ -159,7 +173,7 @@
                                     <input  type="text" class="form-control " name="emailJugador" value="{{old('emailJugador')}}"  autofocus="">
                                     @error('emailJugador')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>
@@ -171,7 +185,7 @@
                                     <input type="text" class="form-control " name="telefonoJugador" value="{{old('telefonoJugador')}}" autofocus="">
                                     @error('telefonoJugador')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>
@@ -183,7 +197,7 @@
                                     <input type="password" class="form-control " value="{{old('passwordJugador')}}" name="passwordJugador" >
                                     @error('passwordJugador')
                                     <br>
-                                    <small>*{{$message}}</small>
+                                    <small class="text-danger">*{{$message}}</small>
                                     <br>                                        
                                     @enderror
                                 </div>

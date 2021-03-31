@@ -26,6 +26,9 @@
             <a href="http://totalges.cl" class="navbar-brand">
                 <span class="brand-text font-weight-light"><b>Escuelas Futbol</b></span>
             </a>
+            <a href="{{route('inicio')}}" class="navbar-brand">
+                <span class="fs-6 fw-light"><b>Inicio</b></span>
+            </a>
         </div>
         
         <!-- Links de Navegacion Derecha -->
@@ -44,7 +47,7 @@
     @yield('content')
 
     {{-- footer --}}
-    <footer class="mainfooter" style="background-color: #59595cb6;" role="contentinfo">
+    <footer class="mainfooter" style="background-color: #bce7e0b6;" role="contentinfo">
         <div class="footer-middle">
             <div >
                 <div class="container row">

@@ -144,8 +144,22 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Posición</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="posicion" value="{{old('posicion')}}" autofocus="">
-                                        @error('posicion')
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected></option>
+                                            <option value="portero">Portero</option>
+                                            <option value="lateral derecho">Lateral derecho</option>
+                                            <option value="lateral izquierdo">Lateral izquierdo</option>
+                                            <option value="defensa central">Defensa central</option>
+                                            <option value="pivote">Pivote</option>
+                                            <option value="mediocentro">Mediocentro</option>
+                                            <option value="mediocentro ofencivo">Mediocentro ofensivo</option>
+                                            <option value="extremo izquierdo">Extremo izquierdo</option>
+                                            <option value="extremo derecho">Extremo derecho</option>
+                                            <option value="delantero centro">Delantero centro</option>
+                                            {{-- <option value="3">Three</option>
+                                            <option value="3">Three</option> --}}
+                                            
+                                        </select>@error('posicion')
                                         <br>
                                         <small>*{{$message}}</small>
                                         <br>                                        

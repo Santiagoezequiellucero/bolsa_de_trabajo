@@ -17,13 +17,11 @@ class CreateEntrenadoresTable extends Migration
             $table->id();
             $table->string('nombres', 50);
             $table->string('apellido_paterno', 50);
-            $table->string('apellido_materno', 50)->nullable();
-            $table->string('foto_perfil')->nullable();
+            $table->string('apellido_materno', 50)->nullable();            
             $table->date('fecha_nacimiento');
             $table->string('club_actual', 50);
             $table->date('fecha_fin_contrato')->nullable();
-            $table->text('sitio_web');
-            //curriculum...opcional
+            $table->text('sitio_web');            
             $table->string('agente', 50);//si o no         
             $table->string('email')->unique();
             $table->string('telefono', 15);

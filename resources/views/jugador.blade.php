@@ -3,6 +3,7 @@
 @section('title','Jugadores')
     
 @section('content')
+<br>
     <h1 class="fs-1 fw-light"><center>Jugadores</center> </h1>
     <main class="py-4">
         <div class="container">
@@ -102,23 +103,23 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Video</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="videoJugador1" value="{{old('videoJugador1')}}" autofocus="">
+                                        <input type="text" class="form-control " name="videoJugador1" value="{{old('videoJugador1')}}" autofocus="" placeholder="URL">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Video</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="videoJugador2" value="{{old('videoJugador2')}}" autofocus="">
+                                        <input type="text" class="form-control " name="videoJugador2" value="{{old('videoJugador2')}}" autofocus="" placeholder="URL">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">Video url</label>
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">Video</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="videoJugador3" value="{{old('videoJugador3')}}" autocomplete="name" autofocus="">
+                                        <input type="text" class="form-control " name="videoJugador3" value="{{old('videoJugador3')}}" placeholder="URL" autocomplete="name" autofocus="">
                                     </div>
                                 </div>
 
@@ -144,7 +145,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Posición</label>
                                     <div class="col-md-6">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <select class="form-select form-select-sm" name="posicion" aria-label=".form-select-sm example">
                                             <option selected></option>
                                             <option value="portero">Portero</option>
                                             <option value="lateral derecho">Lateral derecho</option>
@@ -204,9 +205,15 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right">Perfil Transfermarkt - Soccerway</label>
+                                    <label class="col-md-4 col-form-label text-md-right">Perfil Transfermarkt</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="posicion" value="{{old('posicion')}}" autofocus="">
+                                        <input type="text" class="form-control " name="TranfermarktJugador" value="{{old('posicion')}}" autofocus="" placeholder="URL">
+                                    </div> 
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Perfil Soccerway</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control " name="SoccerwayJugador" value="{{old('posicion')}}" autofocus="" placeholder="URL">
                                     </div> 
                                 </div>
 

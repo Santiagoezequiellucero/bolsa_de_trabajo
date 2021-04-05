@@ -23,12 +23,19 @@ Route::get('jugadores', [JugadorController::class, 'index'])->name('jugadores');
 
 Route::post('jugadores',[JugadorController::class, 'datosJugador'])->name('datosJugador');
 
-Route::get('mostrarJugador',[JugadorController::class, 'show'])->name('mostrarJugador');
+Route::get('mostrarJugador/{id}',[JugadorController::class, 'show'])->name('mostrarJugador');
 
-Route::get('editarJugador',[JugadorController::class, 'editar'])->name('editarJugador');
+Route::get('editarJugador/{id}',[JugadorController::class, 'editar'])->name('editarJugador');
 
-Route::get('entrenadores', EntrenadorController::class)->name('entrenadores');
+Route::get('entrenadores', [EntrenadorController::class, 'index'])->name('entrenadores');
 
-Route::get('agencias', AgencyController::class)->name('agencias');
+Route::post('entrenadores', [EntrenadorController::class, 'datosEntrenador'])->name('mostrarEntrenador');
 
-Route::get('clubes', ClubController::class)->name('clubes');
+Route::get('agencias', [AgencyController::class, 'index'])->name('agencias');
+
+Route::post('agencias', [AgencyController::class, 'datosAgencia'])->name('mostrarAgencia');
+
+Route::get('clubes', [ClubController::class, 'index'])->name('clubes');
+
+Route::post('clubes', [ClubController::class, 'datosClub'])->name('mostrarClub');
+

@@ -35,8 +35,8 @@
         <div class="container col-lg-3 col-md-3 col-sm-12 col-12 d-flex justify-content-center justify-content-start-lg">
             <ul class="navbar-nav">
                 <li class="nav-item d-sm-inline-block ">
-                    <a href="http://totalges.cl/home" class="btn btn-primary">
-                        Iniciar Sesion
+                    <a href="http://totalges.cl/home" class="btn btn-success">
+                        Mi cuenta
                     </a>
                 </li>
             </ul>
@@ -47,10 +47,10 @@
     @yield('content')
 
     {{-- footer --}}
-    <footer class="mainfooter" style="background-color: #bce7e0b6;" role="contentinfo">
+    <footer class="mainfooter" style="background-color: #e3f2fd" role="contentinfo">
         <div class="footer-middle">
-            <div >
-                <div class="container row">
+            <div ><br>
+                <div class="section text-center row">
                 <div class="col-md-3 col-sm-6">
                     <!--Primera Columna-->
                     <div class="footer-pad">

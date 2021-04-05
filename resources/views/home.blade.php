@@ -6,11 +6,12 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-12" id="Fondo">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-12">
             <div class="text-center">
                 <br>
-                <img style="position: relative" src="futbol.jpg">
-                <h1 style="position: absolute"class="fs-1 fw-light">TOTALGES</h1>                 
+                <h1 class="fs-1 fw-light">TOTALGES</h1> 
+                <img src="futbol.jpg">
+                                
             </div>
         </div>
     </div>

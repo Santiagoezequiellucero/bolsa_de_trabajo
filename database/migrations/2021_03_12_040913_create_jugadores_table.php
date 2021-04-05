@@ -30,12 +30,13 @@ class CreateJugadoresTable extends Migration
             $table->string('video3')->nullable();
             $table->string('pierna_habil', 50);
             $table->integer('altura')->nullable();
-            $table->string('posicion', 50)->nullable();
+            $table->string('posicion', 50);
             $table->string('email')->unique();
             $table->string('telefono', 15);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('perfil_transfermarkt_soccerway')->nullable();
+            $table->string('perfil_transfermarkt')->nullable();
+            $table->string('perfil_soccerway')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

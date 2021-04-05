@@ -1,9 +1,10 @@
 @extends('layout.plantilla')
 
-@section('Editar Jugador','Jugadores')
+@section('title','Editar perfil')
     
 @section('content')
-<h1><center>Editar Perfil</center></h1>
+<br>
+<h1 class="fs-1 fw-light"><center>Editar Perfil</center></h1>
 <main class="py-4">
     <div class="container">
         <div class="row justify-content-center">
@@ -62,7 +63,7 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Imagen de Perfil</label>
                                 <div class="col-md-6">
-                                    <input type="file" class="form-control" name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
+                                    <input type="file" class="form-control " name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
                                 </div>
                             </div>
 
@@ -210,12 +211,26 @@
                                 </div> 
                             </div>
 
+                            
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="rememberJugador" id="remember">
+                                        <label class="form-check-label" for="remember">
+                                            Recuérdame
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Actualizar
+                                    <button type="submit" class="btn btn-success">
+                                        Registrarse
                                     </button>
-                                    
+                                    <a class="btn btn-link" href="http://totalges.cl/password/reset">
+                                    ¿Olvidaste tu contraseña?
+                                    </a>
                                 </div>
                             </div>
                         </form>

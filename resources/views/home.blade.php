@@ -21,7 +21,7 @@
         <br>
     </div>
     <div class="container btn-group ">
-        <a href="{{route('jugadores')}}" class="btn btn-success btn-lg">
+        <a href="{{route('jugadores.create')}}" class="btn btn-success btn-lg">
             Jugadores
         </a> 
         <a href="{{route('entrenadores')}}" class="btn btn-success btn-lg">

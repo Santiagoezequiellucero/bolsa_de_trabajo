@@ -6,20 +6,31 @@ use App\Models\Jugador;
 use Illuminate\Http\Request;
 
 class JugadorController extends Controller
-{
+{   
+
+
     public function index()
-    {    
-        return view('jugador');
+    {   
+        $jugadores = Jugador::all();
+        return view('mostrarJugador', compact('jugadores'));
     }
 
-    public function datosJugador(Request $request)
+    public function create()
     {
+        return view('jugadores.create');
+
+    }
+
+    public function store(Request $request)
+    {
+        
         $request->validate([
 
             
             'nombresJugador'=> 'required',
             'apellidoPaternoJugador'=>'required',
             'nacimientoJugador'=>'required',
+            'fotoJugador'=>'image|max:2048',
             'piernaHabil'=>'required',
             'posicion'=>'required',//select 2 para la posicion
             "emailJugador"=>'required',
@@ -56,15 +67,13 @@ class JugadorController extends Controller
 
 
         $jugador->save();
-
-
-        return redirect()->route('mostrarJugador', $jugador);
+        
+        return  redirect()->route('jugadores.show', compact('jugador'));
     }
-    
 
-    public function show()
+    public function show(Jugador $jugador)
     {    
-        return view('mostrarJugador');
+        return view('jugadores.show', compact('jugador'));
     }
 
     public function editar()

@@ -13,7 +13,7 @@
                         <div class="card-header">Ingresar</div>
     
                         <div class="card-body">
-                            <form method="POST" action="{{route('datosJugador')}}">
+                            <form method="post" action="{{route('jugadores.store')}}">
 
                                 @csrf
                                 
@@ -63,7 +63,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Imagen de Perfil</label>
                                     <div class="col-md-6">
-                                        <input type="file" class="form-control " name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
+                                        <input type="file" class="form-control " name="fotoJugador" accept="image/*" autofocus="">
                                     </div>
                                 </div>
 
@@ -126,7 +126,12 @@
                                 <div class="form-group row">
                                     <label  class="col-md-4 col-form-label text-md-right">Pierna habil</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="piernaHabil" value="{{old('piernaHabil')}}" autofocus="">
+                                        <select class="form-select form-select-sm" name="piernaHabil" aria-label=".form-select-sm example">
+                                            <option selected></option>
+                                            <option value="izquierda">Izquierda</option>
+                                            <option value="derecha">Derecha</option> 
+                                            <option value="ambas">Ambas</option>
+                                        </select>
                                         @error('piernaHabil')
                                         <br>
                                         <small class="text-danger">*{{$message}}</small>
@@ -138,7 +143,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Altura</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control " name="altura" value="{{old('altura')}}" autofocus="">
+                                        <input type="number" class="form-control " name="altura" value="{{old('altura')}}" autofocus="">
                                     </div>
                                 </div>
 
@@ -171,7 +176,7 @@
                                 <div class="form-group row">
                                     <label  class="col-md-4 col-form-label text-md-right">email</label>
                                     <div class="col-md-6">
-                                        <input  type="text" class="form-control " name="emailJugador" value="{{old('emailJugador')}}"  autofocus="">
+                                        <input  type="email" class="form-control " name="emailJugador" value="{{old('emailJugador')}}"  autofocus="">
                                         @error('emailJugador')
                                         <br>
                                         <small class="text-danger">*{{$message}}</small>
@@ -231,7 +236,7 @@
     
                                 <div class="form-group row mb-0">
                                     <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-success">
+                                        <button class="btn btn-success">
                                             Registrarse
                                         </button>
                                         <a class="btn btn-link" href="http://totalges.cl/password/reset">

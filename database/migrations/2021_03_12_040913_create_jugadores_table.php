@@ -19,7 +19,7 @@ class CreateJugadoresTable extends Migration
             $table->string('apellido_paterno', 50);
             $table->string('apellido_materno', 50)->nullable();
             $table->binary('foto_perfil')->nullable();
-            $table->string('fecha_nacimiento');//<18 telefono apoderado 
+            $table->date('fecha_nacimiento');//<18 telefono apoderado 
             $table->string('nombre_apoderado', 50)->nullable();
             $table->string('telefono_apoderado', 15)->nullable();
             $table->string('club_actual', 50)->nullable();

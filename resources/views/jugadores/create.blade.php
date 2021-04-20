@@ -13,7 +13,7 @@
                         <div class="card-header">Ingresar</div>
     
                         <div class="card-body">
-                            <form method="post" action="{{route('jugadores.store')}}">
+                            <form method="post" action="{{route('jugadores.store')}}" enctype="multipart/form-data">
 
                                 @csrf
                                 
@@ -63,7 +63,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Imagen de Perfil</label>
                                     <div class="col-md-6">
-                                        <input type="file" class="form-control " name="fotoJugador" accept="image/*" autofocus="">
+                                        <input type="file" class="form-control " name="fotoJugador" accept="image/*" autofocus=""><br>                                        
                                     </div>
                                 </div>
 
@@ -126,7 +126,7 @@
                                 <div class="form-group row">
                                     <label  class="col-md-4 col-form-label text-md-right">Pierna habil</label>
                                     <div class="col-md-6">
-                                        <select class="form-select form-select-sm" name="piernaHabil" aria-label=".form-select-sm example">
+                                        <select class="form-select form-select-sm" name="piernaHabil" aria-label=".form-select-sm example" value="{{old('piernaHabil')}}">
                                             <option selected></option>
                                             <option value="izquierda">Izquierda</option>
                                             <option value="derecha">Derecha</option> 
@@ -150,7 +150,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Posición</label>
                                     <div class="col-md-6">
-                                        <select class="form-select form-select-sm" name="posicion" aria-label=".form-select-sm example">
+                                        <select class="form-select form-select-sm" name="posicion" aria-label=".form-select-sm example" value="{{old('posicion')}}">
                                             <option selected></option>
                                             <option value="portero">Portero</option>
                                             <option value="lateral derecho">Lateral derecho</option>

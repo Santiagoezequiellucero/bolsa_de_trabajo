@@ -13,14 +13,16 @@
                     <div class="card-header">Ingresar</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{route('datosJugador')}}">
+                        <form method="POST" action="{{route('jugadores.update', $jugador)}}">
 
                             @csrf
+
+                            @method('put')
                             
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Nombres</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="nombresJugador" value="{{old('nombresJugador')}}" autofocus="">
+                                    <input type="text" class="form-control " name="nombresJugador" value="{{$jugador->nombres}}" autofocus="">
                                     @error('nombresJugador')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -32,7 +34,7 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Apellido paterno</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="apellidoPaternoJugador" value="{{old('apellidoPaternoJugador')}}" autofocus="">
+                                    <input type="text" class="form-control " name="apellidoPaternoJugador" value="{{$jugador->apellido_paterno}}" autofocus="">
                                     @error('apellidoPaternoJugador')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -44,14 +46,14 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Apellido materno</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="apellidoMaternoJugador" value="{{old('apellidoMaternoJugador')}}" autofocus="">
+                                    <input type="text" class="form-control " name="apellidoMaternoJugador" value="{{$jugador->apellido_materno}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Fecha de nacimiento</label>
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control " name="nacimientoJugador" value="{{old('nacimientoJugador')}}" autofocus="">
+                                    <input type="date" class="form-control " name="nacimientoJugador" value="{{$jugador->fecha_nacimiento}}" autofocus="">
                                     @error('nacimientoJugador')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -63,70 +65,75 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Imagen de Perfil</label>
                                 <div class="col-md-6">
-                                    <input type="file" class="form-control " name="fotoJugador" value="{{old('fotoJugador')}}" autofocus="">
+                                    <input type="file" class="form-control " name="fotoJugador" value="{{$jugador->foto_perfil}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Nombre y apellido apoderado</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="nombresApoderado" value="{{old('nombresApoderado')}}" placeholder="Ingresa si eres menor de edad" autofocus="">
+                                    <input type="text" class="form-control " name="nombresApoderado" value="{{$jugador->nombre_apoderado}}" placeholder="Ingresa si eres menor de edad" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label  class="col-md-4 col-form-label text-md-right">Telefono Apoderado</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="telefonoApoderado" value="{{old('telefonoApoderado')}}" placeholder="Ingresa si eres menor de edad" autofocus="">
+                                    <input type="text" class="form-control " name="telefonoApoderado" value="{{$jugador->telefono_apoderado}}" placeholder="Ingresa si eres menor de edad" autofocus="">
                                 </div>
                             </div> 
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Club actual</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="clubJugador" value="{{old('clubJugador')}}" autofocus="">
+                                    <input type="text" class="form-control " name="clubJugador" value="{{$jugador->club_actual}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label  class="col-md-4 col-form-label text-md-right">Fecha fin de Contrato</label>
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control " name="finContratoJugador" value="{{old('finContratoJugador')}}" autofocus="">
+                                    <input type="date" class="form-control " name="finContratoJugador" value="{{$jugador->fecha_fin_contrato}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Agente</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="agenteJugador" value="{{old('agenteJugador')}}" autofocus="">
+                                    <input type="text" class="form-control " name="agenteJugador" value="{{$jugador->agente}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Video url</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="videoJugador1" value="{{old('videoJugador1')}}" autofocus="">
+                                    <input type="text" class="form-control " name="videoJugador1" value="{{$jugador->video1}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Video url</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="videoJugador2" value="{{old('videoJugador2')}}" autofocus="">
+                                    <input type="text" class="form-control " name="videoJugador2" value="{{$jugador->video2}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Video url</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="videoJugador3" value="{{old('videoJugador3')}}" autocomplete="name" autofocus="">
+                                    <input type="text" class="form-control " name="videoJugador3" value="{{$jugador->video3}}" autocomplete="name" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label  class="col-md-4 col-form-label text-md-right">Pierna habil</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="piernaHabil" value="{{old('piernaHabil')}}" autofocus="">
+                                    <select class="form-select form-select-sm" name="piernaHabil" aria-label=".form-select-sm example" value="{{$jugador->pierna_habil}}">
+                                        <option selected></option>
+                                        <option value="izquierda">Izquierda</option>
+                                        <option value="derecha">Derecha</option> 
+                                        <option value="ambas">Ambas</option>
+                                    </select>
                                     @error('piernaHabil')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -138,14 +145,14 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Altura</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="altura" value="{{old('altura')}}" autofocus="">
+                                    <input type="text" class="form-control " name="altura" value="{{$jugador->altura}}" autofocus="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Posición</label>
                                 <div class="col-md-6">
-                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <select class="form-select form-select-sm" name="posicion" aria-label=".form-select-sm example" value="{{$jugador->posicion}}">
                                         <option selected></option>
                                         <option value="portero">Portero</option>
                                         <option value="lateral derecho">Lateral derecho</option>
@@ -171,7 +178,7 @@
                             <div class="form-group row">
                                 <label  class="col-md-4 col-form-label text-md-right">email</label>
                                 <div class="col-md-6">
-                                    <input  type="text" class="form-control " name="emailJugador" value="{{old('emailJugador')}}"  autofocus="">
+                                    <input  type="text" class="form-control " name="emailJugador" value="{{$jugador->email}}"  autofocus="">
                                     @error('emailJugador')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -183,7 +190,7 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Telefono</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="telefonoJugador" value="{{old('telefonoJugador')}}" autofocus="">
+                                    <input type="text" class="form-control " name="telefonoJugador" value="{{$jugador->telefono}}" autofocus="">
                                     @error('telefonoJugador')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -195,7 +202,7 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right">Contraseña</label>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control " value="{{old('passwordJugador')}}" name="passwordJugador" >
+                                    <input type="password" class="form-control " value="{{$jugador->password}}" name="passwordJugador" >
                                     @error('passwordJugador')
                                     <br>
                                     <small class="text-danger">*{{$message}}</small>
@@ -205,9 +212,15 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-4 col-form-label text-md-right">Perfil Transfermarkt - Soccerway</label>
+                                <label class="col-md-4 col-form-label text-md-right">Perfil Transfermarkt</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control " name="posicion" value="{{old('posicion')}}" autofocus="">
+                                    <input type="text" class="form-control " name="TranfermarktJugador" value="{{$jugador->perfil_transfermarkt}}" autofocus="" placeholder="URL">
+                                </div> 
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Perfil Soccerway</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control " name="SoccerwayJugador" value="{{$jugador->perfil_soccerway}}" autofocus="" placeholder="URL">
                                 </div> 
                             </div>
 
@@ -226,7 +239,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-success">
-                                        Registrarse
+                                        Actualizar Datos
                                     </button>
                                     <a class="btn btn-link" href="http://totalges.cl/password/reset">
                                     ¿Olvidaste tu contraseña?

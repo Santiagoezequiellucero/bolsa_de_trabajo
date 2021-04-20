@@ -17,7 +17,11 @@ Route::post('jugadores', [JugadorController::class, 'store'])->name('jugadores.s
 
 Route::get('jugadores/{jugador}/show', [JugadorController::class, 'show'])->name('jugadores.show');
 
-Route::get('editarJugador/{id}',[JugadorController::class, 'editar'])->name('editarJugador');
+Route::get('jugadores/{jugador}/edit',[JugadorController::class, 'edit'])->name('jugadores.edit');
+
+Route::put('jugadores/{jugador}',[JugadorController::class, 'update'])->name('jugadores.update');
+
+Route::delete('jugadores/{jugador}',[JugadorController::class, 'destroy'])->name('jugadores.destroy');
 
 
 //entrenadores
